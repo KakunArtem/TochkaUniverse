@@ -8,17 +8,21 @@ public class MainWindowHandler {
     private final JFrame mainWindow = new JFrame("Tochka Universe");
     private final Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
-    public static MainWindowHandler getMainWindow() {
+    public static MainWindowHandler appWindow() {
         if (instance == null) {
             instance = new MainWindowHandler();
         }
         return instance;
     }
 
+    public JFrame getMainWindow() {
+        return mainWindow;
+    }
+
     private MainWindowHandler() {
         this.mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.mainWindow.setVisible(true);
-        //size to props
+        //TODO size to props
         this.mainWindow.setSize(804, 804);
         this.centerMainWindow();
     }
